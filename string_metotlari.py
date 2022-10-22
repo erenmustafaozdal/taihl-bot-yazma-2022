@@ -24,3 +24,29 @@ print(makale.lower().count("teknoloji"))
 ad = input("Adınız: ")
 print(ad + "|")
 print(ad.strip() + "|")
+
+# Soldaki ve sağdaki belirli karakterleri temizleyelim: strip("ifade")
+urun_kodu = "HEP20221022HEP"
+print(urun_kodu.strip("HEP"))
+
+# Soldaki boşluk veya belirli ifadeyi temizleyelim: lstrip()
+print(ad + "|")  # adı boşlukla gönderelim
+print(ad.lstrip() + "|")
+print(urun_kodu.lstrip("HEP"))
+
+# Sağdaki boşluk veya belirli ifadeyi temizleyelim: rstrip()
+print(ad + "|")  # adı boşlukla gönderelim
+print(ad.rstrip() + "|")
+print(urun_kodu.rstrip("HEP"))
+
+# Karakter dizisini bölelim: split()
+print(makale.split("."))
+print(okul.split())
+
+# Böldüğümüz ve listeye dönüşen ifadeleri birleştirelim: join()
+kelimeler = okul.split()
+print(kelimeler)
+print("---".join(kelimeler))
+
+# Ortalayıp çıktı verme: center()
+print("Eren".center(25, "-"))

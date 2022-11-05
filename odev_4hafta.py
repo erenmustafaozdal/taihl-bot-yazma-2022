@@ -9,20 +9,32 @@ Kaliforniya Üniversitesi elektronik ve bilgisayar mühendisliği- malzeme bilim
 
 # 1- Haber kaç paragraftan oluşuyor?
 # ❗ Bu hafta yetişmedi. Stringler gibi listelerin eleman sayısı da len() ile bulunur
+paragraflar = haber.split("\n")
+print(len(paragraflar))
 
 # 2- Haberin ilk paragrafının tüm harflerini büyük yapıp
+print(paragraflar[0].upper())
 
 # 3- Haberin 2. paragrafını her kelimenin ilk harfini büyük yapıp
+print(paragraflar[1].title())
 
 # 4- Haberdeki "2022/2023" ifadelerini "2023/2024" olarak değiştirelim: replace()
+print(haber.replace("2022/2023", "2023/2024"))
 
 # 5- Haberi küçük harfe çevirip, "teknoloji" kelimesi kaç defa geçiyor bakalım
+print(haber.lower().count("teknoloji"))
 
 # 6- Haberin içindeki yeni satır ifadelerini silin.
 # Ardından noktalardan bölüp, her elemanı ayrı satıra yazdırın
+tek_paragraf = haber.replace("\n", "")
+elemanlar = tek_paragraf.split(".")
+print("\n".join(elemanlar))
 
 # 7- Öğrenci isim ve yaş bilgilerinden oluşan listeleri birleştirelim
 ogrenci_1 = ["Ahmet", 12]
 ogrenci_2 = ["Ayşe", 16]
+birlesmis = ogrenci_1 + ogrenci_2
+print(birlesmis)
 
 # 8- Birleştirilmiş listeden ikinci öğrencinin yaşını ekrana yazdıralım
+print(birlesmis[3])

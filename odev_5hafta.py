@@ -14,14 +14,14 @@ Python 1980'lerin sonunda ABC programlama diline alternatif olarak tasarlanmış
 # 4- Kullanıcıdan input ile aralarına virgül koydurarak meyve isimleri alın.
 # Bu meyve isimlerini listeye çevirin. İsimlerini alfabetik olarak sıralayın.
 
-# 5- Meyve isimlerini alfabetik olarak tesr sıralayın.
+# 5- Meyve isimlerini alfabetik olarak ters sıralayın.
 
 ogrenciler = ["Ahmet", "Mehmet", "Funda", "Bekir", "Halime", "Kasım", "Yeşim", "Eylül"]
-# 5- "ogrenciler" listesinin 3 numaralı indise sahip elemanını silin.
+# 6- "ogrenciler" listesinin 3 numaralı indise sahip elemanını silin.
 
-# 6- "ogrenciler" listesinin sonuna "Ali" ekleyin
+# 7- "ogrenciler" listesinin sonuna "Ali" ekleyin
 
-# 7- "ogrenciler" listesinin 5 numaralı indis konumuna "Fatma" ekleyin
+# 8- "ogrenciler" listesinin 5 numaralı indis konumuna "Fatma" ekleyin
 
 hesaplar = {
     "youtube": {
@@ -55,14 +55,15 @@ hesaplar = {
         "gönderi": 239,
     }
 }
-# 8- YouTube kanalının adresini yazdırın.
+# 9- YouTube kanalının adresini yazdırın.
 
-# 9- YouTube kanalının abone sayısını ve görüntülenme
+# 10- YouTube kanalının abone sayısını ve görüntülenme
 # sayısını bir cümle içinde yazıdırın.
 # ÖRNEK: Kanalın 100 abonesi ve 4500 görüntülenmesi var.
 
-# 10- Facebook takipçi sayısını 15 artırıp ekrana yazdıralım.
+# 11- Facebook takipçi sayısını 15 artırıp ekrana yazdıralım.
 
-# 11- Instagram takipçi ve takip sayısını toplamını ekrana yazdıralım
+# 12- Instagram takipçi ve takip sayısını toplamını ekrana yazdıralım
 
-# 12- TAİHL sosyal medya hesaplarındaki toplam abone ve takipçi sayılarını ekrana yazdıralım
+# 13- TAİHL sosyal medya hesaplarındaki toplam abone ve takipçi
+# sayılarını ekrana yazdıralım

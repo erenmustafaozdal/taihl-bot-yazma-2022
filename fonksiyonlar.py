@@ -4,7 +4,7 @@ yapmamızı sağlar. Fonksiyonlar çoğu zaman, yapmak istediğimiz işlemler i�
 şablon vazifesi görür. Fonksiyonları kullanarak, bir veya birkaç adımdan
 oluşan işlemleri tek bir isim altında toplayabiliriz.
 1. Her fonksiyonun bir adı bulunur ve fonksiyonlar sahip oldukları
-bu adlarla  anılır.
+bu adlarla anılır.
 2. Şekil olarak, her fonksiyonun isminin yanında birer parantez işareti
 bulunur. (open(), print(), input(), len() vb.)
 3. Bu parantez işaretlerinin içine, fonksiyonlara işlevsellik kazandıran bazı
@@ -30,3 +30,8 @@ bir değeri varsa, o parametreye herhangi bir değer vermeden de fonksiyonu kull
 #   ➡ sep: ' ' (Boşluk karakteri)
 #   ➡ end: '\n' (Yeni satır karakteri)
 #   ➡ file: None (Dosya yok. Komut istemine çıktı veriyor)
+print("Teknoloji", "İmam", "Hatip", "Lisesi", sep="+")
+
+# Ekrana 50 tane Python yazdıralım
+for sayi in range(50):
+    print("Python", end="-", file=open("log.txt", "a"))

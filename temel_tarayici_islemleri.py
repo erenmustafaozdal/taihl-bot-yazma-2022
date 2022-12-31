@@ -1,10 +1,9 @@
-# selenium ve diğer paketler içeri aktaralım
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service as ChromeService
-from webdriver_manager.chrome import ChromeDriverManager
+# tarayıcı nesnemizi import edelim
+from moduller.tarayici import Tarayici
 from time import sleep
 
-tarayici = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+tarayici_nesnesi = Tarayici()
+tarayici = tarayici_nesnesi.al()
 
 # Tarayıcıda gezinme
 tarayici.get("https://teknolojiaihl.meb.k12.tr")

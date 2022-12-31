@@ -39,3 +39,18 @@ print(tarayici.get_window_position())
 # pencerenin pozisyonunu ayarlayalım
 tarayici.set_window_position(100, 500)
 sleep(2)
+
+# penceremizi tam ekran yapalım
+tarayici.maximize_window()
+sleep(2)
+
+# pencereyi simge durumuna küçültelim
+tarayici.minimize_window()
+sleep(2)
+
+# pencereyi tam ekran yapalım
+tarayici.fullscreen_window()
+sleep(2)
+
+# ekran görüntüsü alalım
+tarayici.save_screenshot("./gorseller/bot-yazma.png")

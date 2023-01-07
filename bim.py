@@ -60,3 +60,24 @@ for i, tarih in enumerate(tarihler):
             # görünmeyen ürünlerin ekran görüntüsü alınırken hata alırsa geç
             continue
 
+        # 3.1.2. Ürün bilgilerini oku
+        # ürün markasını varsa alalım
+        try:
+            marka = urun.find_element(By.XPATH, ".//h2[@class='subTitle']").text
+        except:
+            marka = ""
+
+        # ürünün açıklaması varsa alalım
+        try:
+            aciklama = urun.find_element(By.XPATH, ".//div[@class='textArea']").text
+        except:
+            aciklama = ""
+
+        # 3.1.3. Ürün fiyatını oku
+        fiyat = urun.find_element(By.XPATH, ".//a[@class='gButton triangle']").text
+
+        print("-"*50)
+        print("Ad:", ad.text)
+        print("Marka:", marka)
+        print("Açıklama:", aciklama)
+        print("Fiyat:", fiyat.replace("\n", ""))

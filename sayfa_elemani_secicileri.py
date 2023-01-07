@@ -8,7 +8,6 @@ tarayici = tarayici_nesnesi.al()
 
 # okulun internet sitesine gidelim
 tarayici.get("https://teknolojiaihl.meb.k12.tr")
-tarayici.maximize_window()
 
 # class seçici kullanarak bir elemana ulaşalım
 baslik = tarayici.find_element(By.CLASS_NAME, "container")

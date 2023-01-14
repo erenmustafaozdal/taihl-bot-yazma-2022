@@ -11,6 +11,20 @@
 from moduller.tarayici import Tarayici
 from selenium.webdriver.common.by import By
 from time import sleep
+from urllib import request
+from openpyxl import Workbook
+from openpyxl import load_workbook
+import os
+
+# Excel dosyası yoksa oluştur. Varsa aç
+excel_yolu = "./bim.xlsx"
+if os.path.exists(excel_yolu):
+    ck = load_workbook(excel_yolu)
+    cs = ck.active
+else:
+    ck = Workbook()
+    cs = ck.active
+    cs.append(["Ad", "Görsel", "Marka", "Açıklama", "Fiyat"])
 
 # Tarayıcıyı oluştur
 tarayici_nesne = Tarayici()
@@ -43,6 +57,13 @@ for i, tarih in enumerate(tarihler):
     # tarih.click()  # sayfa yenileniyor
     sleep(2)
 
+    # Daha fazla ürün göster tuşuna; kaybolana kadar tıklama işlemi
+    while True:
+        try:
+            tarayici.find_element(By.XPATH, "//a[@href='javascript:;changeLPage();']").click()
+        except:
+            break
+
     # 3.1. Ürünler içinde aşağıdaki işlemleri
     urunler = tarayici.find_elements(By.XPATH, "//div[contains(@class, 'product')]")
     for urun in urunler:
@@ -55,7 +76,11 @@ for i, tarih in enumerate(tarihler):
 
         try:
             # 3.1.1. Ürün resmini kaydet
-            urun.find_element(By.TAG_NAME, "img").screenshot(f"./gorseller/{ad.text}.png")
+            # eski: urun.find_element(By.TAG_NAME, "img").screenshot(f"./gorseller/{ad.text}.png")
+            img = urun.find_element(By.TAG_NAME, "img")
+            img_src = img.get_attribute("src")
+            img_adi = img_src.split("/")[-1]
+            request.urlretrieve(img_src, f"./gorseller/{img_adi}")
         except:
             # görünmeyen ürünlerin ekran görüntüsü alınırken hata alırsa geç
             continue
@@ -81,3 +106,7 @@ for i, tarih in enumerate(tarihler):
         print("Marka:", marka)
         print("Açıklama:", aciklama)
         print("Fiyat:", fiyat.replace("\n", ""))
+
+
+tarayici.quit()
+ck.save(excel_yolu)

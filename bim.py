@@ -80,7 +80,8 @@ for i, tarih in enumerate(tarihler):
             img = urun.find_element(By.TAG_NAME, "img")
             img_src = img.get_attribute("src")
             img_adi = img_src.split("/")[-1]
-            request.urlretrieve(img_src, f"./gorseller/{img_adi}")
+            img_yolu = f"./gorseller/{img_adi}"
+            request.urlretrieve(img_src, img_yolu)
         except:
             # görünmeyen ürünlerin ekran görüntüsü alınırken hata alırsa geç
             continue
@@ -101,11 +102,13 @@ for i, tarih in enumerate(tarihler):
         # 3.1.3. Ürün fiyatını oku
         fiyat = urun.find_element(By.XPATH, ".//a[@class='gButton triangle']").text
 
-        print("-"*50)
-        print("Ad:", ad.text)
-        print("Marka:", marka)
-        print("Açıklama:", aciklama)
-        print("Fiyat:", fiyat.replace("\n", ""))
+        cs.append([
+            ad.text,
+            f'=HYPERLINK("{os.getcwd()}\\{img_yolu}", "GÖRSEL")',
+            marka,
+            aciklama,
+            fiyat
+        ])
 
 
 tarayici.quit()
